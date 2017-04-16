@@ -1,0 +1,17 @@
+[
+  {
+    "name": "once in two months",
+    "title": "раз в два месяца",
+    "count": 6
+  },
+  {
+    "name": "monthly",
+    "title": "раз в месяц",
+    "count": 12
+  },
+  {
+    "name": "twice a month",
+    "title": "два раза в месяц",
+    "count": 24
+  }
+]
