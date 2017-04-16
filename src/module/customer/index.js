@@ -1,14 +1,23 @@
 class Customer {
-    constructor(variant = null) {
+    constructor(variant = null, interval = null) {
         this._variant = variant;
+        this._interval = interval;
+    }
+
+    get variant() {
+        return this._variant;
+    }
+
+    get interval() {
+        return this._interval;
     }
 
     selectVariant(variant) {
         this._variant = variant;
     }
 
-    get variant() {
-        return this._variant;
+    selectInterval(interval) {
+        this._interval = interval;
     }
 }
 

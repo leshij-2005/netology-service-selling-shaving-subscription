@@ -21,5 +21,25 @@ suite('when customer want subscribe', function(){
             assert.equal(customer.variant, 'two');
         });
     });
+
+    suite('when customer select one interval', function() {
+        test('then customer given one interval', function () {
+            let customer = new Customer();
+
+            customer.selectInterval('one');
+
+            assert.equal(customer.interval, 'one');
+        });
+    });
+
+    suite('when customer selected one interval and want select two interval', function() {
+        test('then customer given two interval', function () {
+            let customer = new Customer('one', 'one');
+
+            customer.selectInterval('two');
+
+            assert.equal(customer.interval, 'two');
+        });
+    });
 });
 
