@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b74bb4ee-1a55-42d9-a884-340cc5f268fa" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/when-customer-subscribed.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module/customer/index.js" afterPath="$PROJECT_DIR$/src/module/customer/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/when-customer-want-subscribe.js" afterPath="$PROJECT_DIR$/tests/when-customer-want-subscribe.js" />
     </list>
@@ -21,11 +23,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="when-customer-want-subscribe.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="when-customer-want-subscribe.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/when-customer-want-subscribe.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="69" column="38" lean-forward="false" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+            <state relative-caret-position="1156">
+              <caret line="68" column="85" lean-forward="false" selection-start-line="68" selection-start-column="85" selection-end-line="68" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -34,8 +36,18 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module/customer/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="55" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="when-customer-subscribed.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/when-customer-subscribed.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -54,8 +66,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/app.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/src/module/customer/index.js" />
         <option value="$PROJECT_DIR$/tests/when-customer-want-subscribe.js" />
+        <option value="$PROJECT_DIR$/src/module/customer/index.js" />
       </list>
     </option>
   </component>
@@ -170,10 +182,6 @@
               <option name="myItemId" value="module" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="customer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -187,6 +195,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="C:\Users\Алексей\AppData\Roaming\npm\node_modules\gulp" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="F:\develope\netology-service-selling-shaving-subscription\node_modules\mocha" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -200,7 +209,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Mocha.when customer want subscribe">
     <configuration default="false" name="test" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -209,6 +218,38 @@
       </scripts>
       <node-interpreter value="project" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="when customer want subscribe.when customer selected one variant and want select two variant.then customer given two variant" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>tdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/tests/when-customer-want-subscribe.js</test-file>
+      <test-names>
+        <name value="when customer want subscribe" />
+        <name value="when customer selected one variant and want select two variant" />
+        <name value="then customer given two variant" />
+      </test-names>
+      <method />
+    </configuration>
+    <configuration default="false" name="when customer want subscribe" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>tdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/when-customer-want-subscribe.js</test-file>
+      <test-names>
+        <name value="when customer want subscribe" />
+      </test-names>
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -277,12 +318,16 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="1">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="npm.test" />
+      <item index="1" class="java.lang.String" itemvalue="Mocha.when customer want subscribe.when customer selected one variant and want select two variant.then customer given two variant" />
+      <item index="2" class="java.lang.String" itemvalue="Mocha.when customer want subscribe" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="npm.test" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Mocha.when customer want subscribe" />
+        <item index="1" class="java.lang.String" itemvalue="Mocha.when customer want subscribe.when customer selected one variant and want select two variant.then customer given two variant" />
+        <item index="2" class="java.lang.String" itemvalue="npm.test" />
       </list>
     </recent_temporary>
   </component>
@@ -296,12 +341,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492323918788</updated>
-      <workItem from="1492323920416" duration="7009000" />
+      <workItem from="1492323920416" duration="7773000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="when_customer_want_subscribe - 2017.04.16 at 21h 36m 48s.xml">
+      <configuration name="when customer want subscribe" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="when_customer_want_subscribe - 2017.04.16 at 21h 37m 25s.xml">
+      <configuration name="when customer want subscribe" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="when_customer_want_subscribe_when_customer_selected_one_variant_and_want_select_two_variant_then_customer_given_two_variant - 2017.04.16 at 21h 36m 40s.xml">
+      <configuration name="when customer want subscribe.when customer selected one variant and want select two variant.then customer given two variant" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7009000" />
+    <option name="totallyTimeSpent" value="7773000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -412,16 +468,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module/customer/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="55" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/when-customer-want-subscribe.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="69" column="38" lean-forward="false" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+        <state relative-caret-position="1156">
+          <caret line="68" column="85" lean-forward="false" selection-start-line="68" selection-start-column="85" selection-end-line="68" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/when-customer-subscribed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

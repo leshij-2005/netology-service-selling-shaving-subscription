@@ -1,8 +1,10 @@
 class Customer {
-    constructor(variant = null, interval = null) {
+    constructor(data = {}) {
+        const { variant = null, interval = null, dates = [] } = data;
+
         this._variant = variant;
         this._interval = interval;
-        this._dates = [];
+        this._dates = dates;
     }
 
     get variant() {

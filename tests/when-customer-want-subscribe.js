@@ -15,7 +15,7 @@ suite('when customer want subscribe', function(){
 
     suite('when customer selected one variant and want select two variant', function() {
         test('then customer given two variant', function () {
-            let customer = new Customer('one');
+            let customer = new Customer({ variant: 'one' });
 
             customer.selectVariant('two');
 
@@ -35,7 +35,7 @@ suite('when customer want subscribe', function(){
 
     suite('when customer selected one interval and want select monthly interval', function() {
         test('then customer given monthly interval', function () {
-            let customer = new Customer('one', 'once in two months');
+            let customer = new Customer({ variant: 'one', interval: 'once in two months' });
 
             customer.selectInterval('monthly');
 
@@ -55,7 +55,7 @@ suite('when customer want subscribe', function(){
 
     suite('when customer select delivery twice a month', function() {
         test('then customer should be select two different dates', function () {
-            let customer = new Customer('one', 'twice a month');
+            let customer = new Customer({ variant: 'one', interval: 'twice a month' });
 
             customer.selectDate(new Date('2017-04-02'));
             customer.selectDate(new Date('2017-04-27'));
@@ -66,7 +66,7 @@ suite('when customer want subscribe', function(){
 
     suite('when customer select delivery twice a month and select two identical dates', function() {
         test('then customer given error', function () {
-            let customer = new Customer('one', 'twice a month');
+            let customer = new Customer({ variant: 'one', interval: 'twice a month' });
             let date = new Date('2017-04-02');
 
             customer.selectDate(date);
