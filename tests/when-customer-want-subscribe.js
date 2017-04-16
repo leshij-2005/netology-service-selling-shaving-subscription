@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
 const Customer = require('../src/module/customer');
-const products = require('../src/module/product/data');
+const products = require('./fake/products');
 
 suite('when customer want subscribe', function(){
     suite('when customer select one product', function() {
