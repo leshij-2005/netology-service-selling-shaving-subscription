@@ -1,25 +1,26 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
 const Customer = require('../src/module/customer');
+const products = require('../src/module/product/data');
 
 suite('when customer want subscribe', function(){
-    suite('when customer select one variant', function() {
-        test('then customer given one variant', function () {
+    suite('when customer select one product', function() {
+        test('then customer given one product', function () {
             let customer = new Customer();
 
-            customer.selectVariant('one');
+            customer.selectProduct(products[0]);
 
-            assert.equal(customer.variant, 'one');
+            assert.equal(customer.product.name, 'one');
         });
     });
 
-    suite('when customer selected one variant and want select two variant', function() {
-        test('then customer given two variant', function () {
-            let customer = new Customer({ variant: 'one' });
+    suite('when customer selected one product and want select two product', function() {
+        test('then customer given two product', function () {
+            let customer = new Customer({ product: products[0] });
 
-            customer.selectVariant('two');
+            customer.selectProduct(products[1]);
 
-            assert.equal(customer.variant, 'two');
+            assert.equal(customer.product.name, 'two');
         });
     });
 
@@ -35,7 +36,7 @@ suite('when customer want subscribe', function(){
 
     suite('when customer selected one interval and want select monthly interval', function() {
         test('then customer given monthly interval', function () {
-            let customer = new Customer({ variant: 'one', interval: 'once in two months' });
+            let customer = new Customer({ interval: 'once in two months' });
 
             customer.selectInterval('monthly');
 
@@ -55,7 +56,7 @@ suite('when customer want subscribe', function(){
 
     suite('when customer select delivery twice a month', function() {
         test('then customer should be select two different dates', function () {
-            let customer = new Customer({ variant: 'one', interval: 'twice a month' });
+            let customer = new Customer({ interval: 'twice a month' });
 
             customer.selectDate(new Date('2017-04-02'));
             customer.selectDate(new Date('2017-04-27'));
@@ -66,7 +67,7 @@ suite('when customer want subscribe', function(){
 
     suite('when customer select delivery twice a month and select two identical dates', function() {
         test('then customer given error', function () {
-            let customer = new Customer({ variant: 'one', interval: 'twice a month' });
+            let customer = new Customer({ interval: 'twice a month' });
             let date = new Date('2017-04-02');
 
             customer.selectDate(date);

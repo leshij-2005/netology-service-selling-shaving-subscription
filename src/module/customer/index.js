@@ -1,14 +1,14 @@
 class Customer {
     constructor(data = {}) {
-        const { variant = null, interval = null, dates = [] } = data;
+        const { product = null, interval = null, dates = [] } = data;
 
-        this._variant = variant;
+        this._product = product;
         this._interval = interval;
         this._dates = dates;
     }
 
-    get variant() {
-        return this._variant;
+    get product() {
+        return this._product;
     }
 
     get interval() {
@@ -19,8 +19,8 @@ class Customer {
         return this._dates;
     }
 
-    selectVariant(variant) {
-        this._variant = variant;
+    selectProduct(product) {
+        this._product = product;
     }
 
     selectInterval(interval) {
