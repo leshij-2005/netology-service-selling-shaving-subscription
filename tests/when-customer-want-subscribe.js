@@ -41,5 +41,15 @@ suite('when customer want subscribe', function(){
             assert.equal(customer.interval, 'two');
         });
     });
+
+    suite('when customer select date', function() {
+        test('then customer given date', function () {
+            let customer = new Customer();
+
+            customer.selectDate(new Date('2017-04-25'));
+
+            assert.equal(customer.date.toISOString(), '2017-04-25T00:00:00.000Z');
+        });
+    });
 });
 
