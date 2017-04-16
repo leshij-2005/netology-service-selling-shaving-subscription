@@ -21,6 +21,18 @@ class CustomerBuilder {
         return this;
     }
 
+    withIntervalMonthly() {
+        this._interval = intervals[1];
+
+        return this;
+    }
+
+    withIntervalTwiceAMonth() {
+        this._interval = intervals[2];
+
+        return this;
+    }
+
     ready() {
         return new Customer({
             product: this._product,
