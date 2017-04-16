@@ -2,7 +2,7 @@ class Customer {
     constructor(variant = null, interval = null) {
         this._variant = variant;
         this._interval = interval;
-        this._date = null;
+        this._dates = [];
     }
 
     get variant() {
@@ -13,8 +13,8 @@ class Customer {
         return this._interval;
     }
 
-    get date() {
-        return this._date;
+    get dates() {
+        return this._dates;
     }
 
     selectVariant(variant) {
@@ -26,7 +26,11 @@ class Customer {
     }
 
     selectDate(date) {
-        this._date = date;
+        if (this._interval === 'twice a month' && this.dates[0] === date) {
+            throw new Error('Dates should be different!');
+        }
+
+        this._dates.push(date);
     }
 }
 
