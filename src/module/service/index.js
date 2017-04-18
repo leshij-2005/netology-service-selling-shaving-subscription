@@ -15,6 +15,14 @@ class Service {
     return this._cost;
   }
 
+  get schedule() {
+    return this._schedule;
+  }
+
+  get lastDeliveryDate() {
+    return this._schedule[this._schedule.length - 1].date;
+  }
+
   calculate() {
     let { product, interval } = this._customer;
 
@@ -33,10 +41,6 @@ class Service {
         });
       });
     }
-  }
-
-  get lastDeliveryDate() {
-    return this._schedule[this._schedule.length - 1].date;
   }
 }
 
