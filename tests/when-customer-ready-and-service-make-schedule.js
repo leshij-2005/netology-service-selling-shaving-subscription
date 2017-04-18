@@ -21,5 +21,13 @@ suite('when customer selected params and service make schedule', function () {
     test('then schedule steps count is 12', function () {
       assert.equal(service.schedule.length, 12);
     });
+
+    suite('when service set today 01.06.2017', function () {
+      test('then next date schedule is 18.06.2017', function () {
+        service.today = new Date('2017-06-01');
+
+        assert.equal(service.nextDeliveryDate.toISOString(), '2017-06-18T00:00:00.000Z');
+      });
+    });
   });
 });
