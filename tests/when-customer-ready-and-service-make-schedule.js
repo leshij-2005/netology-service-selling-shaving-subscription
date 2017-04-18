@@ -14,7 +14,7 @@ suite('when customer selected params and service make schedule', function () {
 
     const service = new Service(customer);
 
-    test('then last date in schedule is 18.05.2018', function () {
+    test('then last date in schedule is 18.04.2018', function () {
       assert.equal(service.lastDeliveryDate.toISOString(), '2018-04-18T00:00:00.000Z');
     });
 
@@ -27,6 +27,32 @@ suite('when customer selected params and service make schedule', function () {
         service.today = new Date('2017-06-01');
 
         assert.equal(service.nextDeliveryDate.toISOString(), '2017-06-18T00:00:00.000Z');
+      });
+    });
+  });
+
+  suite('when customer select delivery twice a month and delivery day 08.05.2017 and 22.05.2017', function () {
+    let customer = new CustomerBuilder()
+      .withOneProduct()
+      .withIntervalOnceInTwoMonths()
+      .withDates([new Date('2017-05-08'), new Date('2017-05-22')])
+      .ready();
+
+    const service = new Service(customer);
+
+    test('then last date in schedule is 22.04.2018', function () {
+      assert.equal(service.lastDeliveryDate.toISOString(), '2018-04-22T00:00:00.000Z');
+    });
+
+    test('then schedule steps count is 24', function () {
+      assert.equal(service.schedule.length, 24);
+    });
+
+    suite('when service set today 01.06.2017', function () {
+      test('then next date schedule is 08.06.2017', function () {
+        service.today = new Date('2017-06-01');
+
+        assert.equal(service.nextDeliveryDate.toISOString(), '2017-06-08T00:00:00.000Z');
       });
     });
   });
