@@ -25,7 +25,7 @@ class Service {
   }
 
   get nextDeliveryDate() {
-    const remainingSteps = this._schedule.filter((step, idx) => {
+    const remainingSteps = this._schedule.filter((step) => {
       return step.date > this._today;
     });
 
@@ -43,9 +43,12 @@ class Service {
   }
 
   createSchedule() {
-    for (let i = 0; i <= 11; i++) {
-      this._customer.dates.forEach((date, idx) => {
+    const { dates, interval } = this._customer;
 
+    const increaseMonthBy = interval.name === 'once in two months' ? 2 : 1;
+
+    for (let i = 0; i <= 11; i += increaseMonthBy) {
+      dates.forEach((date) => {
         let nextDate = new Date(date);
         nextDate.setMonth(date.getMonth() + i);
 
