@@ -6,6 +6,8 @@ saleApp
 
       $scope.select = function(interval) {
         customer.selectInterval(interval);
+
+        $scope.selected = interval;
       }
 
       IntervalsService

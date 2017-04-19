@@ -6,6 +6,8 @@ saleApp
 
       $scope.select = function(product) {
         customer.selectProduct(product);
+
+        $scope.selected = product;
       };
 
       ProductsService
