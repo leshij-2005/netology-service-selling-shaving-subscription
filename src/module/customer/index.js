@@ -1,6 +1,6 @@
 class Customer {
   constructor(data = {}) {
-    const {product = null, interval = null, dates = []} = data;
+    const {product = {}, interval = {}, dates = []} = data;
 
     this._product = product;
     this._interval = interval;

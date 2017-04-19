@@ -7,9 +7,15 @@
     </md-card-title>
     <md-list-item class="md-3-line" ng-click="null">
       <div class="md-list-item-text" layout="column">
-        <h3>Первая дата</h3>
+        <h3>{{ customer.interval.name == 'twice a month' ? 'Первая дата' : 'Дата' }}</h3>
       </div>
       <md-datepicker ng-model="firstDate" md-placeholder="Первая дата" ng-change="select(firstDate)"></md-datepicker>
+    </md-list-item>
+    <md-list-item class="md-3-line" ng-click="null" ng-show="customer.interval.name == 'twice a month'">
+      <div class="md-list-item-text" layout="column">
+        <h3>Вторая дата</h3>
+      </div>
+      <md-datepicker ng-model="secondDate" md-placeholder="Вторая дата" ng-change="select(secondDate)"></md-datepicker>
     </md-list-item>
   </md-list>
 </md-card>
