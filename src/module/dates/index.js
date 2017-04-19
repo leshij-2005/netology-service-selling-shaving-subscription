@@ -1,9 +1,9 @@
 saleApp
   .component('dates', {
     templateUrl: 'src/module/dates/template/index.html',
-    controller: function($scope) {
+    controller: function($scope, customer) {
       $scope.select = function(date) {
-        console.log(date);
+        customer.selectDate(date);
       };
     }
   });

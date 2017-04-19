@@ -9,4 +9,7 @@ saleApp
     $mdDateLocaleProvider.formatDate = function(date) {
       return moment(date).format('DD.MM.YYYY');
     };
+  })
+  .factory('customer', function(){
+    return new Customer();
   });

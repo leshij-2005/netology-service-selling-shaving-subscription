@@ -1,8 +1,12 @@
 saleApp
   .component('intervals', {
     templateUrl: 'src/module/intervals/template/index.html',
-    controller: function($scope, IntervalsService) {
+    controller: function($scope, IntervalsService, customer) {
       $scope.items = [];
+
+      $scope.select = function(interval) {
+        customer.selectInterval(interval);
+      }
 
       IntervalsService
         .get()

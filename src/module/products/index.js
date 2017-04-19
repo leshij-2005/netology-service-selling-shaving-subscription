@@ -1,8 +1,12 @@
 saleApp
   .component('products', {
     templateUrl: 'src/module/products/template/index.html',
-    controller: function($scope, ProductsService) {
+    controller: function($scope, ProductsService, customer) {
       $scope.items = [];
+
+      $scope.select = function(product) {
+        customer.selectProduct(product);
+      };
 
       ProductsService
         .get()
