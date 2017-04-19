@@ -1,0 +1,19 @@
+<md-card>
+  <md-list flex>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Products</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-list-item class="md-3-line" ng-repeat="item in items" ng-click="null">
+      <img ng-src="{{item.image}}" class="md-avatar" />
+      <div class="md-list-item-text" layout="column">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.price }} $</p>
+      </div>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="add(item)">Select</md-button>
+      </md-card-actions>
+    </md-list-item>
+  </md-list>
+</md-card>

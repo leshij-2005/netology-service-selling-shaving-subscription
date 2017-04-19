@@ -2,16 +2,19 @@
   {
     "name": "one",
     "title": "бритвенный станок",
-    "price": 1
+    "price": 1,
+    "image": "./src/template/images/one.jpg"
   },
   {
     "name": "two",
     "title": "бритвенный станок + гель для бритья",
-    "price": 9
+    "price": 9,
+    "image": "./src/template/images/two.jpg"
   },
   {
     "name": "three",
     "title": "бритвенный станок + гель + средство после бритья",
-    "price": 19
+    "price": 19,
+    "image": "./src/template/images/three.png"
   }
 ]
