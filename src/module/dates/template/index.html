@@ -1,0 +1,15 @@
+<md-card>
+  <md-list flex>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Выберите дату</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-list-item class="md-3-line" ng-click="null">
+      <div class="md-list-item-text" layout="column">
+        <h3>Первая дата</h3>
+      </div>
+      <md-datepicker ng-model="firstDate" md-placeholder="Первая дата" ng-change="select(firstDate)"></md-datepicker>
+    </md-list-item>
+  </md-list>
+</md-card>
