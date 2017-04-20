@@ -3,11 +3,10 @@ saleApp
     templateUrl: 'src/module/products/template/index.html',
     controller: function($rootScope, $scope, ProductsService, customer, CUSTOMER_EVENTS) {
       $scope.items = [];
+      $scope.customer = customer;
 
       $scope.select = function(product) {
         customer.selectProduct(product);
-
-        $scope.selected = product;
 
         $rootScope.$broadcast(CUSTOMER_EVENTS.selectParam);
       };

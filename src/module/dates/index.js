@@ -5,6 +5,9 @@ saleApp
       $scope.today = new Date();
       $scope.minSecondDate = new Date();
 
+      $scope.firstDate = customer.dates[0];
+      $scope.secondDate = customer.dates[1];
+
       $scope.customer = customer;
 
       $scope.select = function(date, index = 0) {
