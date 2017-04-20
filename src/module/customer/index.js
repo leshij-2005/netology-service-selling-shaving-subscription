@@ -1,6 +1,6 @@
 class Customer {
   constructor(data = {}) {
-    const {product = {}, interval = {}, dates = [], subscribed = false} = data;
+    const {product = null, interval = null, dates = [], subscribed = false} = data;
 
     this._product = product;
     this._interval = interval;
@@ -26,7 +26,7 @@ class Customer {
   }
 
   set subscribed(subscribed) {
-    this.subscribed = subscribed;
+    this._subscribed = subscribed;
   }
 
   selectProduct(product) {

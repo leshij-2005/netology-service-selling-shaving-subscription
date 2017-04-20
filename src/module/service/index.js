@@ -7,8 +7,7 @@ class Service {
     if (customer) {
       this._customer = customer;
 
-      this.calculate();
-      this.createSchedule();
+      this.update();
     }
   }
 
@@ -39,7 +38,7 @@ class Service {
       return step.date < this._today;
     });
 
-    return pastedSteps.length * product.price;
+    return pastedSteps.length * (product ? product.price : 0);
   }
 
   get today() {
@@ -51,13 +50,13 @@ class Service {
   }
 
   calculate() {
-    let { product, interval } = this._customer;
+    let { product = {}, interval = {} } = this._customer;
 
     this._cost = product.price * interval.count;
   }
 
   createSchedule() {
-    const { dates, interval } = this._customer;
+    const { dates = [], interval = {} } = this._customer;
     this._schedule = [];
 
     const increaseMonthBy = interval.name === 'once in two months' ? 2 : 1;
@@ -75,8 +74,11 @@ class Service {
   }
 
   update() {
-    this.calculate();
-    this.createSchedule();
+    const { product, interval } = this._customer;
+    if (product && interval) {
+      this.calculate();
+      this.createSchedule();
+    }
   }
 }
 
