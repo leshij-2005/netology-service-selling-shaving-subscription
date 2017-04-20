@@ -1,6 +1,8 @@
 const saleApp = angular.module('SaleApp');
 const moment = require('moment');
 
+require('moment/locale/ru');
+
 saleApp
   .component('subscribe', {
     templateUrl: 'src/module/subscribe/template/index.html',
