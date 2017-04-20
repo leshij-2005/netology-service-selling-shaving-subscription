@@ -51,7 +51,7 @@ suite('when customer want subscribe', function () {
     test('then customer given date', function () {
       let customer = new Customer({interval: intervals[0]});
 
-      customer.selectDate(new Date('2017-04-25'));
+      customer.selectDate(new Date('2017-04-25'), 0);
 
       assert.equal(customer.dates[0].toISOString(), '2017-04-25T00:00:00.000Z');
     });
@@ -61,8 +61,8 @@ suite('when customer want subscribe', function () {
     test('then customer should be select two different dates', function () {
       let customer = new Customer({interval: intervals[2]});
 
-      customer.selectDate(new Date('2017-04-02'));
-      customer.selectDate(new Date('2017-04-27'));
+      customer.selectDate(new Date('2017-04-02'), 0);
+      customer.selectDate(new Date('2017-04-27'), 1);
 
       assert.equal(customer.dates[1].toISOString(), '2017-04-27T00:00:00.000Z');
     });
@@ -73,9 +73,9 @@ suite('when customer want subscribe', function () {
       let customer = new Customer({interval: intervals[2]});
       let date = new Date('2017-04-02');
 
-      customer.selectDate(date);
+      customer.selectDate(date, 0);
 
-      expect(() => customer.selectDate(date)).to.throw(/Dates should be different!/);
+      expect(() => customer.selectDate(date, 0)).to.throw(/Dates should be different!/);
     });
   });
 });

@@ -4,8 +4,8 @@ saleApp
     controller: function($scope, customer) {
       $scope.customer = customer;
 
-      $scope.select = function(date) {
-        customer.selectDate(date);
+      $scope.select = function(date, index = 0) {
+        customer.selectDate(date, index);
       };
     }
   });

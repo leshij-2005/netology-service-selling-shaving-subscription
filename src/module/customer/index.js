@@ -27,12 +27,12 @@ class Customer {
     this._interval = interval;
   }
 
-  selectDate(date) {
+  selectDate(date, index = 0) {
     if (this._interval.name === 'twice a month' && this.dates[0] === date) {
       throw new Error('Dates should be different!');
     }
 
-    this._dates.push(date);
+    this._dates[index] = date;
   }
 }
 
