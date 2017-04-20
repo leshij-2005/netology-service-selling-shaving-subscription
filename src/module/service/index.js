@@ -29,7 +29,17 @@ class Service {
       return step.date > this._today;
     });
 
-    return remainingSteps[0].date;
+    return remainingSteps.length ? remainingSteps[0].date : this._today;
+  }
+
+  get spentAmount() {
+    const { product } = this._customer;
+
+    const pastedSteps = this._schedule.filter((step) => {
+      return step.date < this._today;
+    });
+
+    return pastedSteps.length * product.price;
   }
 
   get today() {
