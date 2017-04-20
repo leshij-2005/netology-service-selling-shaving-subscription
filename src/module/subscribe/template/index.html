@@ -1,0 +1,14 @@
+<md-card>
+  <md-list flex>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Подписка</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-list-item class="md-3-line" ng-click="null" ng-repeat="item in service.schedule">
+      <div class="md-list-item-text" layout="column">
+        <h3>{{ format(item.date) }}</h3>
+      </div>
+    </md-list-item>
+  </md-list>
+</md-card>

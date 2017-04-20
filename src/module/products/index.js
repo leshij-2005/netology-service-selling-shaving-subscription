@@ -1,13 +1,15 @@
 saleApp
   .component('products', {
     templateUrl: 'src/module/products/template/index.html',
-    controller: function($scope, ProductsService, customer) {
+    controller: function($rootScope, $scope, ProductsService, customer, CUSTOMER_EVENTS) {
       $scope.items = [];
 
       $scope.select = function(product) {
         customer.selectProduct(product);
 
         $scope.selected = product;
+
+        $rootScope.$broadcast(CUSTOMER_EVENTS.selectParam);
       };
 
       ProductsService

@@ -1,13 +1,15 @@
 saleApp
   .component('intervals', {
     templateUrl: 'src/module/intervals/template/index.html',
-    controller: function($scope, IntervalsService, customer) {
+    controller: function($rootScope, $scope, IntervalsService, customer, CUSTOMER_EVENTS) {
       $scope.items = [];
 
       $scope.select = function(interval) {
         customer.selectInterval(interval);
 
         $scope.selected = interval;
+
+        $rootScope.$broadcast(CUSTOMER_EVENTS.selectParam);
       }
 
       IntervalsService

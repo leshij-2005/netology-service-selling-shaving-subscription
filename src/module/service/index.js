@@ -44,6 +44,7 @@ class Service {
 
   createSchedule() {
     const { dates, interval } = this._customer;
+    this._schedule = [];
 
     const increaseMonthBy = interval.name === 'once in two months' ? 2 : 1;
 
@@ -57,6 +58,11 @@ class Service {
         });
       });
     }
+  }
+
+  update() {
+    this.calculate();
+    this.createSchedule();
   }
 }
 
