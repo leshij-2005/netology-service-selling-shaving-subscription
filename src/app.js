@@ -1,4 +1,14 @@
-let saleApp = angular.module('SaleApp', ['ngMaterial']);
+require('angular');
+require('angular-aria');
+require('angular-animate');
+require('angular-material');
+
+const moment = require('moment');
+
+const saleApp = angular.module('SaleApp', ['ngMaterial']);
+
+const Customer = require('./module/customer');
+const Service = require('./module/service');
 
 saleApp
   .component('main', {
@@ -36,3 +46,9 @@ saleApp
   .constant('CUSTOMER_EVENTS', {
     selectParam: 'customer-select-param'
   });
+
+require('./module/products');
+require('./module/intervals');
+require('./module/dates');
+require('./module/subscribe');
+require('./module/test');

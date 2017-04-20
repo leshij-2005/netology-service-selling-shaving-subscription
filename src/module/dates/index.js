@@ -1,3 +1,6 @@
+const saleApp = angular.module('SaleApp');
+const moment = require('moment');
+
 saleApp
   .component('dates', {
     templateUrl: 'src/module/dates/template/index.html',

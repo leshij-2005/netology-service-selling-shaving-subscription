@@ -1,3 +1,5 @@
+const saleApp = angular.module('SaleApp');
+
 saleApp
   .component('test', {
     templateUrl: 'src/module/test/template/index.html',

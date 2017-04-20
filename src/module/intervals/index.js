@@ -1,3 +1,5 @@
+const saleApp = angular.module('SaleApp');
+
 saleApp
   .component('intervals', {
     templateUrl: 'src/module/intervals/template/index.html',

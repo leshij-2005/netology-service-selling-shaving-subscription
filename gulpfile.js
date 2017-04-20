@@ -9,6 +9,22 @@ var pxtorem = require('postcss-pxtorem');
 var cssmin = require('gulp-clean-css');
 var sass = require('gulp-sass');
 
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+
+//
+// js build
+//
+
+gulp.task('js:build', function() {
+  return browserify({entries: './src/app.js'})
+    .transform(babelify)
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('./dist/'))
+});
+
 //
 // css build
 //
@@ -27,7 +43,7 @@ gulp.task('css:build', function () {
     .pipe(prefixer())
     .pipe(postcss(processors))
     .pipe(cssmin())
-    .pipe(gulp.dest('./src/template/'))
+    .pipe(gulp.dest('./dist/'))
 });
 
 //
@@ -35,7 +51,8 @@ gulp.task('css:build', function () {
 //
 
 gulp.task('build', [
-  'css:build'
+  'css:build',
+  'js:build'
 ]);
 
 //
@@ -55,6 +72,7 @@ gulp.task('webserver', function() {
 
 gulp.task('watch', function() {
   gulp.watch('./src/**/*.scss', ['css:build']);
+  gulp.watch('./src/**/*.js', ['js:build']);
 });
 
 //
