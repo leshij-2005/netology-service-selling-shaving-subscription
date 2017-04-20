@@ -24,5 +24,15 @@ saleApp
 
         customer.subscribed = true;
       }
+
+      $scope.getStateForItem = function(item) {
+        var state = '';
+
+        state = service.nextDeliveryDate === item.date ? 'next' : state;
+
+        state = service.today > item.date ? 'overpast' : state;
+
+        return state;
+      }
     }
   });

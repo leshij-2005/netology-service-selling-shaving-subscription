@@ -32,6 +32,10 @@ class Service {
     return remainingSteps[0].date;
   }
 
+  get today() {
+    return this._today;
+  }
+
   set today(date) {
     this._today = date;
   }
