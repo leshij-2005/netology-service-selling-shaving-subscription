@@ -4,10 +4,11 @@
       <md-card-title-text>
         <span class="md-headline">Подписка</span>
       </md-card-title-text>
+      <md-button ng-click="save()" class="md-raised md-primary" ng-show="service.schedule.length">Оформить</md-button>
     </md-card-title>
     <md-list-item class="md-3-line" ng-click="null" ng-repeat="item in service.schedule">
       <div class="md-list-item-text" layout="column">
-        <h3>{{ format(item.date) }}</h3>
+        <h3>{{ $index + 1 }}. {{ format(item.date) }}</h3>
       </div>
     </md-list-item>
   </md-list>
