@@ -3,11 +3,11 @@ const saleApp = angular.module('SaleApp');
 saleApp
   .component('intervals', {
     templateUrl: 'src/module/intervals/template/index.html',
-    controller: function($rootScope, $scope, IntervalsService, customer, CUSTOMER_EVENTS) {
+    controller: ($rootScope, $scope, IntervalsService, customer, CUSTOMER_EVENTS) => {
       $scope.items = [];
       $scope.customer = customer;
 
-      $scope.select = function(interval) {
+      $scope.select = interval => {
         customer.selectInterval(interval);
 
         $rootScope.$broadcast(CUSTOMER_EVENTS.selectParam);
@@ -15,15 +15,11 @@ saleApp
 
       IntervalsService
         .get()
-        .then(function(response) {
+        .then(response => {
           $scope.items = response.data;
         });
     }
   })
-  .factory('IntervalsService', function($http) {
-    return {
-      get: function() {
-        return $http.get('./src/module/intervals/data.json');
-      }
-    }
-  });
+  .factory('IntervalsService', $http => ({
+    get: () => $http.get('./src/module/intervals/data.json')
+  }));
