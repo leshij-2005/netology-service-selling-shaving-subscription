@@ -3,11 +3,11 @@ const saleApp = angular.module('SaleApp');
 saleApp
   .component('products', {
     templateUrl: 'src/module/products/template/index.html',
-    controller: function($rootScope, $scope, ProductsService, customer, CUSTOMER_EVENTS) {
+    controller: ($rootScope, $scope, ProductsService, customer, CUSTOMER_EVENTS) => {
       $scope.items = [];
       $scope.customer = customer;
 
-      $scope.select = function(product) {
+      $scope.select = product => {
         customer.selectProduct(product);
 
         $rootScope.$broadcast(CUSTOMER_EVENTS.selectParam);
@@ -15,15 +15,11 @@ saleApp
 
       ProductsService
         .get()
-        .then(function(response) {
+        .then(response => {
           $scope.items = response.data;
         });
     }
   })
-  .factory('ProductsService', function($http) {
-    return {
-      get: function() {
-        return $http.get('./src/module/products/data.json');
-      }
-    }
-  });
+  .factory('ProductsService', $http => ({
+    get: () => $http.get('./src/module/products/data.json')
+  }));
