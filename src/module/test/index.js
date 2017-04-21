@@ -3,10 +3,10 @@ const saleApp = angular.module('SaleApp');
 saleApp
   .component('test', {
     templateUrl: 'src/module/test/template/index.html',
-    controller: function($scope, service) {
+    controller: ($scope, service) => {
       $scope.today = new Date();
 
-      $scope.set = function(date) {
+      $scope.set = date => {
         service.today = date;
 
         service.update();
