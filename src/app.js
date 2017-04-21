@@ -12,27 +12,22 @@ const Service = require('./module/service');
 
 saleApp
   .component('main', {
-    templateUrl: 'src/template/app.html',
-    controller: function($scope) {}
+    templateUrl: 'src/template/app.html'
   })
-  .config(function($mdDateLocaleProvider){
-    $mdDateLocaleProvider.formatDate = function(date) {
-      return moment(date).format('DD.MM.YYYY');
-    };
+  .config($mdDateLocaleProvider => {
+    $mdDateLocaleProvider.formatDate = date => moment(date).format('DD.MM.YYYY');
 
     moment.locale('ru');
   })
-  .factory('customer', function(){
-    var customer;
-    var subscribed = false;
+  .factory('customer', () => {
+    let customer;
+    let subscribed = false;
 
-    var data = localStorage.getItem('customer');
+    const data = localStorage.getItem('customer');
     if (data) {
        customer = JSON.parse(data);
 
-      customer.dates = customer.dates.map(function(date) {
-        return new Date(date);
-      });
+      customer.dates = customer.dates.map(date => new Date(date));
 
       subscribed = true;
     }
@@ -45,9 +40,7 @@ saleApp
 
     return new Customer();
   })
-  .factory('service', function(customer){
-    return new Service(customer);
-  })
+  .factory('service', customer => new Service(customer))
   .constant('CUSTOMER_EVENTS', {
     selectParam: 'customer-select-param'
   });
