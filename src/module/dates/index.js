@@ -6,7 +6,7 @@ require('moment/locale/ru');
 saleApp
   .component('dates', {
     templateUrl: 'src/module/dates/template/index.html',
-    controller: function($rootScope, $scope, customer, CUSTOMER_EVENTS) {
+    controller: ($rootScope, $scope, customer, CUSTOMER_EVENTS) => {
       $scope.today = new Date();
       $scope.minSecondDate = new Date();
 
@@ -15,7 +15,7 @@ saleApp
 
       $scope.customer = customer;
 
-      $scope.select = function(date, index = 0) {
+      $scope.select = (date, index = 0) => {
         customer.selectDate(date, index);
 
         $rootScope.$broadcast(CUSTOMER_EVENTS.selectParam);
