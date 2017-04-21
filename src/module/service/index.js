@@ -24,9 +24,7 @@ class Service {
   }
 
   get nextDeliveryDate() {
-    const remainingSteps = this._schedule.filter((step) => {
-      return step.date > this._today;
-    });
+    const remainingSteps = this._schedule.filter(step => step.date > this._today);
 
     return remainingSteps.length ? remainingSteps[0].date : this._today;
   }
@@ -34,9 +32,7 @@ class Service {
   get spentAmount() {
     const { product } = this._customer;
 
-    const pastedSteps = this._schedule.filter((step) => {
-      return step.date < this._today;
-    });
+    const pastedSteps = this._schedule.filter(step => step.date < this._today);
 
     return pastedSteps.length * (product ? product.price : 0);
   }
@@ -62,7 +58,7 @@ class Service {
     const increaseMonthBy = interval.name === 'once in two months' ? 2 : 1;
 
     for (let i = 0; i <= 11; i += increaseMonthBy) {
-      dates.forEach((date) => {
+      dates.forEach(date => {
         let nextDate = new Date(date);
         nextDate.setMonth(date.getMonth() + i);
 
